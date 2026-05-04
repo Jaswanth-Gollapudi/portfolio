@@ -27,6 +27,7 @@
       font-family: Georgia, "Times New Roman", serif;
       background: #cbe8fb;
       color: #000;
+      overflow-x: hidden;
     }
 
     .navbar {
@@ -189,15 +190,33 @@
       }
     }
 
-    .portfolio-section {
-      padding: 50px 80px;
-      text-align: left;
+    .portfolio-section,
+    .interests-section,
+    .skills-section,
+    .education-section,
+    .experience-section,
+    .certifications-section,
+    .projects-section,
+    .contact-section {
+      padding: 60px 80px;
       background: transparent;
+      text-align: left;
     }
 
-    .portfolio-section h2 {
+    .portfolio-section {
+      padding-top: 50px;
+    }
+
+    .portfolio-section h2,
+    .interests-section h2,
+    .skills-section h2,
+    .education-section h2,
+    .experience-section h2,
+    .certifications-section h2,
+    .projects-section h2,
+    .contact-section h2 {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
       font-weight: normal;
     }
 
@@ -208,20 +227,8 @@
       line-height: 1.6;
     }
 
-    .interests-section {
-      padding: 60px 80px;
-      background: transparent;
-      text-align: left;
-    }
-
-    .interests-section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      font-weight: normal;
-    }
-
     .interests-list {
-      max-width: 950px;
+      width: min(100%, 950px);
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -299,20 +306,17 @@
       background: #32a89e;
     }
 
-    .skills-section {
-      padding: 60px 80px;
-      background: transparent;
-      text-align: left;
-    }
-
-    .skills-section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      font-weight: normal;
+    .skills-box,
+    .education-container,
+    .experience-container,
+    .certifications-intro,
+    .certifications-container,
+    .projects-container,
+    .contact-container {
+      width: min(100%, 1100px);
     }
 
     .skills-box {
-      max-width: 1100px;
       background: transparent;
       padding: 0;
       border-radius: 0;
@@ -333,25 +337,6 @@
       font-size: 19px;
       line-height: 1.6;
       color: #000;
-    }
-
-    .education-section,
-    .experience-section {
-      padding: 60px 80px;
-      background: transparent;
-      text-align: left;
-    }
-
-    .education-section h2,
-    .experience-section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      font-weight: normal;
-    }
-
-    .education-container,
-    .experience-container {
-      max-width: 1100px;
     }
 
     .education-card,
@@ -423,30 +408,19 @@
       margin-bottom: 10px;
     }
 
-    .certifications-section {
-      padding: 60px 80px;
-      background: transparent;
-      text-align: left;
-    }
-
-    .certifications-section h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      font-weight: normal;
-    }
-
     .certifications-intro {
       font-size: 20px;
       line-height: 1.6;
       margin-bottom: 35px;
-      max-width: 1100px;
     }
 
-    .certifications-container {
-      max-width: 1100px;
+    .certifications-container,
+    .projects-container,
+    .contact-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 25px;
+      align-items: start;
     }
 
     .certification-card {
@@ -502,37 +476,15 @@
       margin-right: 8px;
     }
 
-    /* PROJECTS SECTION */
-
-    .projects-section {
-      padding: 60px 80px;
-      background: transparent;
-      text-align: left;
-    }
-
-    .projects-section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      font-weight: normal;
-    }
-
-    .projects-container {
-  max-width: 1100px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  align-items: start;
-}
-
     .project-card {
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease;
-  align-self: start;
-}
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+      align-self: start;
+    }
 
     .project-card:hover {
       transform: translateY(-5px);
@@ -621,30 +573,94 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 900px) {
-      .certifications-container,
-      .projects-container {
-        grid-template-columns: 1fr;
-      }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+      align-self: start;
     }
 
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 25px;
-        flex-direction: column;
-        gap: 20px;
-      }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
 
-      .dropbtn {
-        font-size: 26px;
+    .contact-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 25px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .contact-header i {
+      font-size: 28px;
+      color: #0b4da2;
+    }
+
+    .contact-header h3 {
+      font-size: 24px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .contact-details {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding: 0 25px;
+      transition: all 0.4s ease;
+    }
+
+    .contact-card:hover .contact-details {
+      max-height: 220px;
+      opacity: 1;
+      padding: 18px 25px 25px;
+    }
+
+    .contact-details a,
+    .contact-details p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #0b4da2;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    /* AUTO RESPONSIVE DESIGN FOR ALL DEVICES */
+
+    @media (min-width: 1200px) {
+      .portfolio-section,
+      .interests-section,
+      .skills-section,
+      .education-section,
+      .experience-section,
+      .certifications-section,
+      .projects-section,
+      .contact-section {
+        padding-left: clamp(80px, 8vw, 140px);
+        padding-right: clamp(80px, 8vw, 140px);
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: clamp(34px, 3vw, 52px);
       }
 
       .slideshow {
-        font-size: 28px;
+        font-size: clamp(30px, 2.5vw, 44px);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .navbar {
+        padding: 30px 45px;
       }
 
       .portfolio-section,
@@ -653,187 +669,182 @@
       .education-section,
       .experience-section,
       .certifications-section,
-      .projects-section {
-        padding: 35px 25px;
+      .projects-section,
+      .contact-section {
+        padding: 50px 45px;
       }
 
-      .interest-circle {
-        width: 65px;
-        height: 65px;
-        min-width: 65px;
+      .certifications-container,
+      .projects-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-section p {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 22px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .dropbtn {
         font-size: 24px;
       }
 
-      .interest-title {
+      .dropdown-content {
+        min-width: 190px;
+      }
+
+      .dropdown-content a {
+        font-size: 16px;
+        padding: 11px 15px;
+      }
+
+      .social-icons a {
+        font-size: 20px;
+        margin-left: 0;
+        margin-right: 16px;
+      }
+
+      .hero {
+        min-height: 65vh;
+        padding: 25px 18px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+        margin-bottom: 22px;
+      }
+
+      .slideshow {
+        font-size: 24px;
+        height: 38px;
+      }
+
+      .portfolio-section,
+      .interests-section,
+      .skills-section,
+      .education-section,
+      .experience-section,
+      .certifications-section,
+      .projects-section,
+      .contact-section {
+        padding: 32px 20px;
+      }
+
+      .portfolio-section h2,
+      .interests-section h2,
+      .skills-section h2,
+      .education-section h2,
+      .experience-section h2,
+      .certifications-section h2,
+      .projects-section h2,
+      .contact-section h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .portfolio-section p,
+      .skill-category p,
+      .education-details p,
+      .experience-details p,
+      .experience-details ul li,
+      .certification-content p,
+      .certification-content span,
+      .project-details ul li,
+      .contact-details a,
+      .contact-details p {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .certifications-container,
+      .projects-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .interest-circle {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
         font-size: 22px;
       }
 
-      .interest-text {
-        margin-left: 0;
-        font-size: 17px;
-      }
-
-      .interest-title:hover + .interest-text {
-        margin-top: 15px;
-      }
-
-      .skill-category h3 {
+      .interest-title,
+      .education-card summary,
+      .experience-card summary,
+      .project-title,
+      .contact-header h3 {
         font-size: 20px;
-      }
-
-      .skill-category p {
-        font-size: 17px;
       }
 
       .education-card summary,
-      .experience-card summary {
-        font-size: 20px;
-        padding: 18px 22px;
+      .experience-card summary,
+      .project-title,
+      .contact-header {
+        padding: 18px 20px;
       }
 
       .education-details,
       .experience-details {
-        padding: 20px 22px;
-      }
-
-      .education-details p,
-      .experience-details p,
-      .experience-details ul li {
-        font-size: 17px;
+        padding: 18px 20px;
       }
 
       .certification-card {
         flex-direction: column;
         align-items: flex-start;
+        padding: 22px;
       }
 
-      .certification-content h3 {
-        font-size: 21px;
-      }
-
-      .certification-content p,
-      .certification-content span {
-        font-size: 17px;
+      .certification-icon {
+        width: 75px;
+        height: 75px;
+        min-width: 75px;
+        font-size: 32px;
       }
 
       .project-image {
-        height: 150px;
-        font-size: 55px;
-      }
-
-      .project-title {
-        font-size: 21px;
-      }
-
-      .project-tools,
-      .project-details ul li,
-      .project-link {
-        font-size: 17px;
+        height: 135px;
+        font-size: 48px;
       }
     }
-    /* CONTACT SECTION */
 
-.contact-section {
-  padding: 60px 80px;
-  background: transparent;
-  text-align: left;
-}
+    @media (max-width: 380px) {
+      .portfolio-section,
+      .interests-section,
+      .skills-section,
+      .education-section,
+      .experience-section,
+      .certifications-section,
+      .projects-section,
+      .contact-section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
 
-.contact-section h2 {
-  font-size: 32px;
-  margin-bottom: 25px;
-  font-weight: normal;
-}
+      .hero h1 {
+        font-size: 25px;
+      }
 
-.contact-container {
-  max-width: 1100px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  align-items: start;
-}
+      .slideshow {
+        font-size: 22px;
+      }
 
-.contact-card {
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease;
-  align-self: start;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-}
-
-.contact-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 22px 25px;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.contact-header i {
-  font-size: 28px;
-  color: #0b4da2;
-}
-
-.contact-header h3 {
-  font-size: 24px;
-  font-weight: normal;
-  margin: 0;
-}
-
-.contact-details {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 0 25px;
-  transition: all 0.4s ease;
-}
-
-.contact-card:hover .contact-details {
-  max-height: 220px;
-  opacity: 1;
-  padding: 18px 25px 25px;
-}
-
-.contact-details a,
-.contact-details p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #0b4da2;
-  text-decoration: none;
-  word-break: break-word;
-}
-
-.contact-details a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 35px 25px;
-  }
-
-  .contact-header h3 {
-    font-size: 21px;
-  }
-
-  .contact-details a,
-  .contact-details p {
-    font-size: 17px;
-  }
-}
+      .project-title,
+      .education-card summary,
+      .experience-card summary,
+      .contact-header h3 {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 
@@ -1303,62 +1314,64 @@
 
     </div>
   </section>
-<section class="contact-section" id="contact">
-  <h2>Contact</h2>
 
-  <div class="contact-container">
+  <section class="contact-section" id="contact">
+    <h2>Contact</h2>
 
-    <div class="contact-card">
-      <div class="contact-header">
-        <i class="fa-regular fa-envelope"></i>
-        <h3>Mail ID</h3>
+    <div class="contact-container">
+
+      <div class="contact-card">
+        <div class="contact-header">
+          <i class="fa-regular fa-envelope"></i>
+          <h3>Mail ID</h3>
+        </div>
+
+        <div class="contact-details">
+          <a href="mailto:jaswanthgollapudi2000@gmail.com">
+             jaswanthgollapudi2000@gmail.com
+          </a>
+        </div>
       </div>
 
-      <div class="contact-details">
-        <a href="https://mail.google.com/mail/u/1/?ogbl#inbox" target="_blank">
-          Open Gmail
-        </a>
+      <div class="contact-card">
+        <div class="contact-header">
+          <i class="fa-brands fa-github"></i>
+          <h3>GitHub</h3>
+        </div>
+
+        <div class="contact-details">
+          <a href="https://github.com/Jaswanth-Gollapudi" target="_blank">
+            https://github.com/Jaswanth-Gollapudi
+          </a>
+        </div>
       </div>
+
+      <div class="contact-card">
+        <div class="contact-header">
+          <i class="fa-brands fa-linkedin"></i>
+          <h3>LinkedIn</h3>
+        </div>
+
+        <div class="contact-details">
+          <a href="https://www.linkedin.com/in/jaswanth-guptha-gollapudi-99878a243/" target="_blank">
+            https://www.linkedin.com/in/jaswanth-guptha-gollapudi-99878a243/
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-header">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Location</h3>
+        </div>
+
+        <div class="contact-details">
+          <p>Fremont, CA</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="contact-card">
-      <div class="contact-header">
-        <i class="fa-brands fa-github"></i>
-        <h3>GitHub</h3>
-      </div>
-
-      <div class="contact-details">
-        <a href="https://github.com/Jaswanth-Gollapudi" target="_blank">
-          https://github.com/Jaswanth-Gollapudi
-        </a>
-      </div>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-header">
-        <i class="fa-brands fa-linkedin"></i>
-        <h3>LinkedIn</h3>
-      </div>
-
-      <div class="contact-details">
-        <a href="https://www.linkedin.com/in/jaswanth-guptha-gollapudi-99878a243/" target="_blank">
-          https://www.linkedin.com/in/jaswanth-guptha-gollapudi-99878a243/
-        </a>
-      </div>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-header">
-        <i class="fa-solid fa-location-dot"></i>
-        <h3>Location</h3>
-      </div>
-
-      <div class="contact-details">
-        <p>Fremont, CA</p>
-      </div>
-    </div>
-
-  </div>
-</section>
 </body>
 </html>
